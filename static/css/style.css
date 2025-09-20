@@ -712,110 +712,218 @@ section {
 /* --- Tablet and General Small Screens --- */
 /* --- Tablet and General Small Screens --- */
 @media (max-width: 1100px) {
+  body {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
   .overlay {
-    padding: 20px 5%;
+    padding: 20px 5%; /* Reduced padding for smaller screens */
   }
 
   .container {
-    flex-direction: column;
+    flex-direction: column; /* Stack video and intro vertically */
     align-items: center;
     gap: 20px;
+    max-width: 100%;
+  }
+
+  .video-box video {
+    max-width: 100%; /* Full width for video */
+    margin: 20px auto; /* Center with reduced margin */
+  }
+
+  .video-box h1,
+  .intro-box h1 {
+    font-size: 24px; /* Slightly smaller headings */
+  }
+
+  .intro-box {
+    margin-top: 100px;
+    max-width: 100%; /* Full width */
+    padding: 15px;
+  }
+
+  .intro-box p {
+    font-size: 20px; /* Smaller text for readability */
   }
 
   .button-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  /* --- General Rule for All Images --- */
-  img {
-    max-width: 180px;
-    width: 95%;
-    height: auto;
-    display: block;
-    justify-content: center;
-    align-items: center;/* Fixes potential bottom spacing issues */
-  }
-
-  /* --- FIX FOR OVERFLOWING PROJECT IMAGES --- */
-  /* The .left1 container needs to be constrained */
-  .project .left1 img{
-    width: 100%;
-    justify-content: center;
-    align-items: center;/* Adjust this value as you see fit */
-  }
-
-  .resume-container img {
-    width: 95%;
-    max-width: 550px;
+    flex-direction: column; /* Stack buttons vertically */
     align-items: center;
-    justify-content: center;
+    gap: 10px;
+    max-width: 100%;
   }
 
+  .button-box a {
+    width: 100%; /* Full width buttons */
+    max-width: 300px; /* Cap button width */
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+
+  section,
+  #about,
+  #education,
+  #skills,
+  #contact,
+  #coding,
+  #projects,
+  #resume {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  #about h2,
+  #education h2,
+  #skills h2,
+  #contact h2,
+  #coding h2,
+  #projects h2,
+  #resume h2 {
+    font-size: 24px;
+  }
+
+  #education h3 {
+    font-size: 20px;
+  }
+
+  #education h4 {
+    font-size: 20px;
+  }
+
+  #skills h3 {
+    font-size: 18px;
+  }
+
+  #about p,
+  #education p,
+  #skills p,
+  #contact p,
+  #coding p,
+  #projects p,
+  #resume p {
+    font-size: 20px;
+  }
+
+  .skills-entry {
+    flex-direction: column; /* Stack skills vertically */
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .skills-entry h3 {
+    padding-right: 0;
+    font-size: 18px;
+  }
+
+  .profile,
   .project,
-  .profile {
-    flex-direction: column;
+  .profile.reverse,
+  .project.reverse {
+    flex-direction: column; /* Stack profile/project elements vertically */
     align-items: center;
     text-align: center;
     gap: 15px;
   }
 
-  .profile.reverse,
-  .project.reverse {
-    flex-direction: column;
-  }
-
+  .left,
+  .left1,
   .right {
-    padding-left: 0;
-    padding-top: 20px;
     width: 100%;
+    padding-left: 0;
+    padding-top: 10px;
   }
 
-  .right h3,
-  #projects p,
-  #about p {
-    text-align: left;
+  .left img,
+  .left1 img,
+  #resume img {
+    max-width: 100%; /* Full width images */
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
   }
 
-  /* --- FIX FOR SKILLS SECTION LAYOUT --- */
-  /* Stack the skill title and list vertically for more space */
-  .skills-entry {
-    display: flex;
-    flex-direction: column; /* Stack h3 on top of p */
-    align-items: flex-start; /* Align text to the left */
-    gap: 5px;
-  }
-
-  /* Make the h3 smaller */
-  .skills-entry h3 {
+  .right h3 {
+    text-align: center;
     font-size: 18px;
-    margin: 0;
   }
 }
 
-/* --- Mobile Phone Specific Adjustments --- */
+/* Mobile Phones (max-width: 600px) */
 @media (max-width: 600px) {
-  .intro-box p,
-  #about p,
-  #education p,
-  #contact p,
-  #coding p,
-  #projects p,
-  #resume p,
-  .skills-entry p {
+  .overlay {
+    padding: 15px 3%; /* Further reduced padding */
+  }
+
+  .video-box video {
+    margin: 10px auto;
+  }
+
+  .video-box h1,
+  .intro-box h1 {
+    font-size: 20px;
+  }
+
+  .intro-box p {
     font-size: 16px;
   }
 
-  #education h4 {
+  .button-box a {
+    font-size: 10px;
+    padding: 8px 16px;
+  }
+
+  section,
+  #about,
+  #education,
+  #skills,
+  #contact,
+  #coding,
+  #projects,
+  #resume {
+    padding: 10px;
+    margin: 15px auto;
+  }
+
+  #about h2,
+  #education h2,
+  #skills h2,
+  #contact h2,
+  #coding h2,
+  #projects h2,
+  #resume h2 {
+    font-size: 20px;
+  }
+
+  #education h3 {
     font-size: 18px;
   }
-  h1 { font-size: 28px; }
-  h2 { font-size: 22px; }
-  h3 { font-size: 20px; }
-  
-  .skills-entry h3 { font-size: 17px; }
 
-  section { padding: 20px 10px; }
+  #education h4 {
+    font-size: 16px;
+  }
+
+  #skills h3 {
+    font-size: 16px;
+  }
+
+  #about p,
+  #education p,
+  #skills p,
+  #contact p,
+  #coding p,
+  #projects p,
+  #resume p {
+    font-size: 16px;
+  }
+
+  .skills-entry h3 {
+    font-size: 16px;
+  }
+
+  .right h3 {
+    font-size: 16px;
+  }
 }
