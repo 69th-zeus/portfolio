@@ -709,61 +709,111 @@ section {
 }
 
 
+/* --- Tablet and General Small Screens --- */
+/* --- Tablet and General Small Screens --- */
 @media (max-width: 1100px) {
+  .overlay {
+    padding: 20px 5%;
+  }
 
-  /* Stack the main video/intro layout */
   .container {
     flex-direction: column;
     align-items: center;
     gap: 20px;
   }
 
-  /* Stack project and profile layouts */
-  .profile,
-  .project {
+  .button-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* --- General Rule for All Images --- */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Fixes potential bottom spacing issues */
+  }
+
+  /* --- FIX FOR OVERFLOWING PROJECT IMAGES --- */
+  /* The .left1 container needs to be constrained */
+  .project .left1 {
+    width: 100%;
+    max-width: 450px; /* Adjust this value as you see fit */
+  }
+
+  .logo {
+    width: 100%;
+    max-width: 400px;
+  }
+  .resume-container img {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .project,
+  .profile {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 15px;
   }
 
-  /* Handle the reversed layouts correctly when stacked */
   .profile.reverse,
   .project.reverse {
     flex-direction: column;
   }
 
-  /* Center text and remove padding that looks odd on mobile */
   .right {
     padding-left: 0;
     padding-top: 20px;
+    width: 100%;
   }
-  .right h3, #projects p {
+
+  .right h3,
+  #projects p,
+  #about p {
     text-align: left;
   }
-  
-  /* Reduce font sizes for better readability on small screens */
+
+  /* --- FIX FOR SKILLS SECTION LAYOUT --- */
+  /* Stack the skill title and list vertically for more space */
+  .skills-entry {
+    display: flex;
+    flex-direction: column; /* Stack h3 on top of p */
+    align-items: flex-start; /* Align text to the left */
+    gap: 5px;
+  }
+
+  /* Make the h3 smaller */
+  .skills-entry h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+}
+
+/* --- Mobile Phone Specific Adjustments --- */
+@media (max-width: 600px) {
   .intro-box p,
   #about p,
-  #education h4,
   #education p,
   #contact p,
   #coding p,
   #projects p,
-  #resume p {
-    font-size: 18px; /* Reduce paragraph font size */
+  #resume p,
+  .skills-entry p {
+    font-size: 16px;
   }
 
-  #about h2,
-  #education h2,
-  #skills h2,
-  #contact h2,
-  #coding h2,
-  #projects h2,
-  #resume h2 {
-    font-size: 24px; /* Reduce heading font size */
+  #education h4 {
+    font-size: 18px;
   }
+  h1 { font-size: 28px; }
+  h2 { font-size: 22px; }
+  h3 { font-size: 20px; }
+  
+  .skills-entry h3 { font-size: 17px; }
 
-  #education h3{
-    font-size: 20px;
-  }
+  section { padding: 20px 10px; }
 }
