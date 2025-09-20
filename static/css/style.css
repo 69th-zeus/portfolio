@@ -711,54 +711,64 @@ section {
 
 /* --- Tablet and General Small Screens --- */
 /* --- Tablet and General Small Screens --- */
+/* --- Responsive Design --- */
+/* Tablet and Smaller Screens (max-width: 1100px) */
 @media (max-width: 1100px) {
   body {
-    grid-template-columns: 1fr; /* Single column layout */
+    display: block; /* Remove grid for single-column layout */
   }
 
   .overlay {
-    padding: 20px 5%; /* Reduced padding for smaller screens */
+    padding: 15px 5%; /* Reduced padding for smaller screens */
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
   }
 
   .container {
     flex-direction: column; /* Stack video and intro vertically */
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     max-width: 100%;
+    box-sizing: border-box;
   }
 
   .video-box video {
-    max-width: 100%; /* Full width for video */
-    margin: 20px auto; /* Center with reduced margin */
+    width: 100%; /* Full width, no overflow */
+    max-width: 400px; /* Cap video size */
+    height: auto;
+    margin: 15px auto;
+    display: block;
   }
 
   .video-box h1,
   .intro-box h1 {
-    font-size: 24px; /* Slightly smaller headings */
+    font-size: 22px; /* Adjusted for readability */
   }
 
   .intro-box {
     margin-top: 100px;
-    max-width: 100%; /* Full width */
+    width: 100%;
+    max-width: 100%;
     padding: 15px;
+    box-sizing: border-box;
   }
 
   .intro-box p {
-    font-size: 20px; /* Smaller text for readability */
+    font-size: 18px;
   }
 
   .button-box {
     flex-direction: column; /* Stack buttons vertically */
     align-items: center;
     gap: 10px;
+    width: 100%;
     max-width: 100%;
   }
 
   .button-box a {
-    width: 100%; /* Full width buttons */
-    max-width: 300px; /* Cap button width */
+    width: 100%;
+    max-width: 280px; /* Prevent buttons from being too wide */
     font-size: 12px;
-    padding: 10px 20px;
+    padding: 10px 15px;
   }
 
   section,
@@ -773,6 +783,8 @@ section {
     max-width: 100%;
     margin: 20px auto;
     padding: 15px;
+    box-sizing: border-box;
+    margin-top: 50px;
   }
 
   #about h2,
@@ -782,19 +794,19 @@ section {
   #coding h2,
   #projects h2,
   #resume h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   #education h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   #education h4 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   #skills h3 {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   #about p,
@@ -804,7 +816,7 @@ section {
   #coding p,
   #projects p,
   #resume p {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .skills-entry {
@@ -815,64 +827,80 @@ section {
 
   .skills-entry h3 {
     padding-right: 0;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .profile,
   .project,
   .profile.reverse,
   .project.reverse {
-    flex-direction: column; /* Stack profile/project elements vertically */
+    flex-direction: column; /* Stack vertically */
     align-items: center;
     text-align: center;
-    gap: 15px;
+    gap: 10px;
+    width: 100%;
   }
 
   .left,
   .left1,
   .right {
     width: 100%;
-    padding-left: 0;
-    padding-top: 10px;
+    max-width: 100%;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   .left img,
   .left1 img,
   #resume img {
-    max-width: 100%; /* Full width images */
-    width: 95%;
+    width: 100%; /* Full width, no overflow */
+    max-width: 300px; /* Cap image size to prevent stretching */
     height: auto;
     margin: 0 auto;
+    display: block;
+    box-sizing: border-box;
+    object-fit: contain; /* Ensure images scale without distortion */
   }
 
   .right h3 {
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
   }
+  .profile-reverse .right,
+.profile .right{
+    margin-top: 50px;
+  }
+}
+
+#resume .button-box-p a{
+  justify-content: center;
+  font-size: 10px;
 }
 
 /* Mobile Phones (max-width: 600px) */
 @media (max-width: 600px) {
   .overlay {
-    padding: 15px 3%; /* Further reduced padding */
+    padding: 10px 3%;
   }
 
   .video-box video {
+    max-width: 100%;
     margin: 10px auto;
   }
 
   .video-box h1,
   .intro-box h1 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .intro-box p {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .button-box a {
     font-size: 10px;
-    padding: 8px 16px;
+    padding: 8px 12px;
+    max-width: 200px;
   }
 
   section,
@@ -894,19 +922,20 @@ section {
   #coding h2,
   #projects h2,
   #resume h2 {
-    font-size: 20px;
+    font-size: 18px;
+    margin-top: 100px;
   }
 
   #education h3 {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   #education h4 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   #skills h3 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   #about p,
@@ -916,14 +945,26 @@ section {
   #coding p,
   #projects p,
   #resume p {
-    font-size: 16px;
+    font-size: 14px;
+    padding-top: 100px;
+  }
+
+.profile-reverse .right,
+.profile .right{
+    margin-top: 100px;
   }
 
   .skills-entry h3 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .right h3 {
-    font-size: 16px;
+    font-size: 14px;
+  }
+
+  .left img,
+  .left1 img,
+  #resume img {
+    max-width: 250px; /* Smaller cap for mobile */
   }
 }
