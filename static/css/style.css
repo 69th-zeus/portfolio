@@ -709,7 +709,7 @@ section {
 }
 
 
-@media (max-width: 1280px) {
+@media (max-width: 1100px) {
 
   /* Stack the main video/intro layout */
   .container {
@@ -738,7 +738,7 @@ section {
     padding-top: 20px;
   }
   .right h3, #projects p {
-    text-align: center;
+    text-align: left;
   }
   
   /* Reduce font sizes for better readability on small screens */
