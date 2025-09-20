@@ -731,25 +731,27 @@ section {
 
   /* --- General Rule for All Images --- */
   img {
-    max-width: 100%;
+    max-width: 180px;
+    width: 95%;
     height: auto;
-    display: block; /* Fixes potential bottom spacing issues */
+    display: block;
+    justify-content: center;
+    align-items: center;/* Fixes potential bottom spacing issues */
   }
 
   /* --- FIX FOR OVERFLOWING PROJECT IMAGES --- */
   /* The .left1 container needs to be constrained */
-  .project .left1 {
+  .project .left1 img{
     width: 100%;
-    max-width: 450px; /* Adjust this value as you see fit */
+    justify-content: center;
+    align-items: center;/* Adjust this value as you see fit */
   }
 
-  .logo {
-    width: 100%;
-    max-width: 400px;
-  }
   .resume-container img {
-    width: 90%;
-    max-width: 500px;
+    width: 95%;
+    max-width: 550px;
+    align-items: center;
+    justify-content: center;
   }
 
   .project,
