@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <style type="text/css">
+      /* Default cursor everywhere */
+      body,
+      * {
+        cursor: url("data:image/x-icon;base64,AAACAAEAICAAAAEAAgCoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP96enr/enp6/3p6ev96enr/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/3p6ev96enr/enp6/3p6ev8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/enp6/3p6ev+8vLz/vLy8/7y8vP+8vLz/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP96enr/enp6/7y8vP+8vLz/vLy8/7y8vP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/vLy8/7y8vP/////+/////ry8vP+8vLz/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP+8vLz/vLy8//////7////+vLy8/7y8vP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/vLy8/7y8vP+8vLz/vLy8/7y8vP+8vLz/vLy8/7y8vP+8vLz/vLy8/wAAAP8AAAD//////v////7////+/////ry8vP+8vLz/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP+8vLz/vLy8/7y8vP+8vLz/vLy8/7y8vP+8vLz/vLy8/7y8vP+8vLz/AAAA/wAAAP/////+/////v////7////+vLy8/7y8vP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP+8vLz/vLy8/7y8vP+8vLz//////v////7////+/////v////7////+/////v////7////+/////v////7////+/////v////7////+/////v////7////+AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/7y8vP+8vLz/vLy8/7y8vP/////+/////v////7////+/////v////7////+/////v////7////+/////v////7////+/////v////7////+/////v////4AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/3p6ev96enr/vLy8/7y8vP+8vLz/vLy8//////7////+/////v////7////+/////v////7////+/////v////7////+/////gAAAP8AAAD//////v////7////+/////gAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/enp6/3p6ev+8vLz/vLy8/7y8vP+8vLz//////v////7////+/////v////7////+/////v////7////+/////v////7////+AAAA/wAAAP/////+/////v////7////+AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP96enr/enp6/3p6ev96enr/vLy8/7y8vP/////+/////v////7////+/////v////7////+/////v////7////+/////v////7////+/////gAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/3p6ev96enr/enp6/3p6ev+8vLz/vLy8//////7////+/////v////7////+/////v////7////+/////v////7////+/////v////7////+AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP+8vLz/vLy8//////7////+/////v////7////+/////v////7////+VVVV/1VVVf/////+/////v////7////+/////v////4AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/7y8vP+8vLz//////v////7////+/////v////7////+/////v////5VVVX/VVVV//////7////+/////v////7////+/////gAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/7y8vP+8vLz//////v////7////+/////v////7////+/////v////5VVVX/VVVV//////7////+/////v////5VVVX/VVVV//////7////+AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/vLy8/7y8vP/////+/////v////7////+/////v////7////+/////lVVVf9VVVX//////v////7////+/////lVVVf9VVVX//////v////4AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/vLy8/7y8vP/////+/////v////7////+/////v////7////+/////v////7////+/////v////7////+/////lVVVf9VVVX//////v////7////+/////gAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP+8vLz/vLy8//////7////+/////v////7////+/////v////7////+/////v////7////+/////v////7////+VVVV/1VVVf/////+/////v////7////+AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP+8vLz/vLy8//////7////+/////v////7////+/////v////7////+AAAA/wAAAP+8vLz/vLy8//////7////+/////v////7////+/////v////7////+AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/7y8vP+8vLz//////v////7////+/////v////7////+/////v////4AAAD/AAAA/7y8vP+8vLz//////v////7////+/////v////7////+/////v////4AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD//////v////7////+/////v////7////+AAAA/wAAAP8AAAD/AAAA/7y8vP+8vLz//////v////4AAAD/AAAA/7y8vP+8vLz//////v////7////+/////gAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP/////+/////v////7////+/////v////4AAAD/AAAA/wAAAP8AAAD/vLy8/7y8vP/////+/////gAAAP8AAAD/vLy8/7y8vP/////+/////v////7////+AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA//////7////+/////v////4AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/vLy8/7y8vP/////+/////v////7////+AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD//////v////7////+/////gAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP+8vLz/vLy8//////7////+/////v////4AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////w////8P///8A////AP///wA///8AP//AAA//wAAP/wAAA/8AAAP8AAAA/AAAAPAAAADwAAAA8AAAA/AAAAPwAAAP8AAAD/AAAA/wAAAPwAAAD8AAAA8AAAA/AAAAPwAAAD8AAAA/APAA/wDwAP/D/wP/w/8D//////8="),
+          auto !important;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Main translucent overlay -->
+    <div class="overlay">
+      <div class="container">
+        <div class="video-box">
+          <video autoplay muted loop>
+            <source
+              src="{{ url_for('static', filename='videos/landing_page_guy.mp4') }}"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <h1>An Average Day</h1>
+        </div>
+
+        <div class="intro-box">
+          <h1>Hello, I’m Ayush</h1>
+          <p>
+            A Computer Science student at the National Institute of Technology,
+            Uttarakhand. I am currently spending my time trying to make sense of
+            the world through data. I have a passion for machine learning, data
+            science and Artificial Intelligence.
+
+            <br /><br />
+
+            My toolkit for this is a heavy dose of Python and its army of data
+            libraries like pandas, scikit-learn, and PyTorch. I spend most of my
+            time persuading them to turn messy data into clean insights, and
+            occasionally, they listen. My curiosity even led me to build a GPT
+            model from scratch, mainly to peek behind the curtain of modern AI.
+
+            <br /><br />
+
+            When I’m not wrangling data or training models, I unwind by building
+            and playing retro games, which is a welcome reminder that not all
+            code has to predict the global economy. Sometimes you just need to
+            make a pixelated character jump correctly. 🦘
+          </p>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <div class="button-box">
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#coding">Coding Website Profiles</a>
+        <a href="#education">Education</a>
+        <a href="#resume">Resume</a>
+        <a href="#about">About Myself</a>
+        <a href="#contact">Contact Me</a>
+      </div>
+
+      <!-- Sections -->
+      <section id="skills">
+        <h2>Skills</h2>
+
+        <div class="skills-entry">
+          <h3>> Languages -</h3>
+          <p>Python, Java, C, HTML, CSS, SQL</p>
+        </div>
+        <div class="skills-entry">
+          <h3>> Libraries and Frameworks -</h3>
+          <p>
+            pandas, NummPy, scikit-learn, Streamlit, Matplotlib, Seaborn, Plotly
+            Express, PyTorch, Flask
+          </p>
+        </div>
+        <div class="skills-entry">
+          <h3>> Data & Machine Learning -</h3>
+          <p>
+            Statistics, Data Collection, Cleaning, Visualization, Feature
+            Engineering, Neural Models, Regressions and Classification Models
+          </p>
+        </div>
+        <div class="skills-entry">
+          <h3>> Tools And Technologies -</h3>
+          <p>Git, GitHub, Jupyter, Google Colab, VS Code</p>
+        </div>
+        <div class="skills-entry">
+          <h3>> Relevant Course Work -</h3>
+          <p>
+            DSA, Operating Systems, DBMS, Networking, Network Security, Software
+            Engineering
+          </p>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+          <div class="left1">
+            <div class="logo">
+              <img
+                src="{{ url_for('static', filename='images/financial.png') }}"
+                alt="financial pic"
+              />
+            </div>
+            <br />
+            <div class="button-box-b">
+              <a
+                href="https://fundamental-analysis-by-69th-zeus.streamlit.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div class="right">
+            <h3>Financial Summary Dashboard</h3>
+            <p>
+              A project where I combined coding + finance. The dashboard lets
+              anyone enter a stock ticker and instantly see 40+ financial
+              metrics, from simple one's like Revenue to more complex one's like
+              Piotroski F-Score. <br /><br />
+              What makes it special is “Dummy Mode” — a feature that breaks down
+              every metric in simple terms, with formulas and real-world
+              analogies, so even non-finance people can understand. <br /><br />
+              It’s live on Streamlit Cloud, so anyone can try it out!
+            </p>
+          </div>
+        </div>
+        <br /><br />
+        <hr />
+        <br /><br />
+        <div class="project reverse">
+          <div class="left1">
+            <div class="logo">
+              <img
+                src="{{ url_for('static', filename='images/credit_risk.png') }}"
+                alt="2d game pic"
+              />
+            </div>
+            <br />
+            <div class="button-box-r">
+              <a
+                href="https://github.com/69th-zeus/2d-platformer-game"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div class="right">
+            <h3>Credit Risk Model</h3>
+            <p>
+              Built a credit risk simulation framework in Python, implementing
+              the Expected Loss model (PD × LGD × EAD) across 10,000+ loans with
+              a 95% confidence interval. <br />
+              <br />
+              Trained and benchmarked Logistic Regression, Decision Tree, and
+              XGBoost models with AUC/ROC evaluation. Engineered 25+ features
+              from demographic and financial data to improve prediction
+              accuracy. <br /><br />
+              Project completed as part of an applied credit risk modeling
+              course.
+            </p>
+          </div>
+        </div>
+        <br /><br />
+        <hr />
+        <br /><br />
+        <div class="project">
+          <div class="left1">
+            <div class="logo">
+              <img
+                src="{{ url_for('static', filename='images/gpt2.png') }}"
+                alt="gpt pic"
+              />
+            </div>
+            <br />
+            <div class="button-box-y">
+              <a
+                href="https://github.com/69th-zeus/gpt-2"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div class="right">
+            <h3>GPT-2 LLM from scratch</h3>
+            <p>
+              Implemented the GPT-2 architecture from scratch in Python/PyTorch,
+              covering multi-head attention, transformer blocks, and positional
+              encodings. <br /><br />
+              Leveraged OpenAI’s pretrained weights to validate implementation
+              and perform text generation tasks. Strengthened understanding of
+              transformer internals, transfer learning, and large-scale NLP
+              model design. <br /><br />
+              This was done by following the book "Build an LLM from Scratch" by
+              Sebastian Raschka
+            </p>
+          </div>
+        </div>
+        <br /><br />
+        <hr />
+        <br /><br />
+        <div class="project reverse">
+          <div class="left1">
+            <div class="logo">
+              <img
+                src="{{ url_for('static', filename='images/2dgame.png') }}"
+                alt="credit risk pic"
+              />
+            </div>
+            <br />
+            <div class="button-box-c">
+              <a
+                class="btn-blue"
+                href="https://github.com/69th-zeus/credit-risk-model"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div class="right">
+            <h3>2D Platformer Game</h3>
+            <p>
+              Developed a side-scrolling 2D platformer in Python using Pygame.
+              Implemented core mechanics such as character movement, collision
+              detection, enemies, and level design. <br />
+              <br />
+              Built as a passion project by following youtube tutorials,
+              combining creativity with coding to design a playable game.
+            </p>
+          </div>
+        </div>
+        <br /><br />
+        <hr />
+        <br /><br />
+        <div class="project">
+          <div class="left1">
+            <div class="logo">
+              <img
+                src="{{ url_for('static', filename='images/college.png') }}"
+                alt="college pic"
+              />
+            </div>
+            <br />
+            <div class="button-box-g">
+              <a
+                class="btn-blue"
+                href="https://college-recommender-by-69th-zeus.streamlit.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div class="right">
+            <h3>JEE College Recommender</h3>
+            <p>
+              I built this project as a tool to help students figure out their
+              college options. Used admission data from 2021–2024. <br /><br />
+              I cleaned and structured it into a working recommender system for
+              JEE ranks. The tool suggests possible colleges based on input rank
+              and preferences. <br /><br />
+              NEET data isn’t included yet, but I plan to add it in future
+              updates.
+            </p>
+          </div>
+        </div>
+        <br /><br />
+        <br /><br />
+      </section>
+      <section id="coding">
+        <h2>Coding Website Profiles</h2>
+        <div class="profile">
+          <div class="left">
+            <div class="logo">
+              <img
+                src="{{ url_for('static', filename='images/leetcode_logo.png') }}"
+                alt="Leetcode Logo"
+              />
+            </div>
+            <div class="button-box-g">
+              <a
+                href="https://leetcode.com/u/69th_zeus/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Leetcode</a
+              >
+            </div>
+          </div>
+          <div class="right">
+            <p>
+              I spend time on LeetCode regularly to sharpen my problem-solving
+              skills. Solved 250+ problems so far, and still counting <br />
+              <br />
+              Currently My Rating stands at 1560 which i know is not a lot but I
+              have started giving contexts just about a few months ago and i am
+              actively improving myself to do better.
+            </p>
+          </div>
+        </div>
+        <br /><br />
+        <hr />
+        <br /><br />
+        <div class="profile reverse">
+          <div class="left">
+            <div class="logo">
+              <img
+                src="{{ url_for('static', filename='images/codeforces_logo.png') }}"
+                alt="Codeforces Logo"
+              />
+            </div>
+            <div class="button-box-p">
+              <a
+                href="https://codeforces.com/profile/69th_zeus"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Codeforces</a
+              >
+            </div>
+          </div>
+          <div class="right">
+            <p>
+              Codeforces is where I challenge myself with tougher problems. It’s
+              not about ratings alone, but about improving in every contest.<br /><br />
+              Rank: Pupil (Rating - 1368)
+            </p>
+          </div>
+        </div>
+        <br /><br />
+      </section>
+      <section id="education">
+        <h2>Education</h2>
+
+        <div class="education-entry">
+          <h4>Bachelor of Technology, Computer Science &amp Engineering</h4>
+          <p class="institution">
+            National Institute of Technology, Uttarakhand
+          </p>
+          <p class="details">
+            Expected Graduation: June 2027<br />
+            Current CGPA: 8.57
+          </p>
+        </div>
+      </section>
+      <section id="resume">
+        <h2>Resume</h2>
+        <p>
+          Here's my Resume, You can click it to view in a new tab or Download it
+        </p>
+        <br /><br />
+        <div class="resume-container">
+          <a
+            href="{{ url_for('static', filename='Resume.pdf') }}"
+            target="_blank"
+          >
+            <img
+              src="{{ url_for('static', filename='images/resume.png') }}"
+              alt="A preview of My Resume."
+            />
+          </a>
+        </div>
+        <br />
+        <div class="button-box-p">
+          <a
+            href="Resume.pdf"
+            class="btn-download"
+            download="Ayush_Kumar_Gupta_Resume.pdf"
+          >
+            Download Full Resume (PDF)
+          </a>
+        </div>
+        <br /><br />
+      </section>
+
+      <section id="about">
+        <h2>About Myself</h2>
+        <br />
+        <br />
+        <p>
+          I'm Ayush Kumar Gupta, a Computer Science and Engineering student at
+          the National Institute of Technology, Uttarakhand. My current CGPA is
+          8.57. I have a strong liking for coding and problem solving. I am
+          quite well versed in Machine Learning Algorithms, Artificial
+          Intelligence, Data Science, DSA and Finance. <br />
+          <br />
+          My knowledge is built on a strong foundation in algorithms, reflected
+          in my rank as a Codeforces Specialist. I enjoy solving complex problem
+          like building a credit risk models or implementing the GPT-2 LLM from
+          scratch while making sure the solution is accessible to everyone as
+          much as possible.
+          <br /><br />
+          Beyond the keyboard, I enjoy video editing, building and playing retro
+          games. I am also a two-time CISCE national medalist in boxing, a sport
+          that has taught me the value of resilience and strategy, the two
+          principles I apply to every technical challenge I face.
+        </p>
+      </section>
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <p>
+          Email (Personal):
+          <a
+            href="mailto:ayush5632roxx@email.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >ayush5632roxx@email.com</a
+          >
+        </p>
+        <p>
+          Email (College):
+          <a
+            href="mailto:bt23cse040@nituk.ac.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            >bt23cse040@nituk.ac.in</a
+          >
+        </p>
+        <p>
+          LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/ayush-gupta-717422332/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Click Here to Open</a
+          >
+        </p>
+      </section>
+    </div>
+  </body>
+</html>

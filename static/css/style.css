@@ -1,0 +1,769 @@
+/* Font */
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fira-code{
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Background stays fixed */
+body {
+  margin: 0;
+  padding: 0;
+  background: url("../images/background.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Press Start 2P", monospace;
+  grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+}
+
+/* Translucent scrolling overlay */
+.overlay {
+  background: rgba(0, 0, 0, 0.2);
+  min-height: 100vh;
+  overflow-y: auto;
+  padding: 30px;
+}
+
+/* Main container (video + intro) */
+.container {
+  display: flex;
+  justify-content: center; /* centers both video + intro as one unit */
+  align-items: flex-start; /* align to top */
+  gap: 20px; /* space between video and text */
+  max-width: 1700px; /* keeps content contained */
+  margin: 0 auto;
+  gap: 0px; /* centers container in page */
+}
+
+.video-box video {
+  max-width: 450px;
+  height: auto;
+  display: block;
+  margin: 40px;
+  margin-top: 10px;
+  border: 10px solid #7b90ee; 
+  box-shadow: 0px 0px 0 10px #fff, 0px 98px 0 10px #fff;
+  border-radius: 8px;
+  /* box-shadow: 4px 4px 0 #3a1f04; */
+}
+
+.video-box h1{
+  text-align: center;
+  color: #ffd700;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.7),
+    /* A solid, slightly offset black shadow */ 5px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+.intro-box {
+  max-width: 1000px;
+  padding: 20px;
+  margin-top: 0px;
+  border-radius: 10px;
+  border: 2px, solid #fff;
+  border-color: white;
+  justify-content: center;
+  color: #f5f5dc;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.7),
+    /* A solid, slightly offset black shadow */ 5px 5px 0px rgba(0, 0, 0, 0.4);
+  background: rgba(20, 20, 20, 0.8);
+}
+
+.intro-box p {
+  font-family: "Fira Code";
+  font-size: 25px; /* bump size a bit for readability */
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+.intro-box h1 {
+  text-align: center;
+  color: #ffd700;
+}
+
+/* Buttons */
+/* Button container */
+.button-box {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;
+  flex-wrap: wrap; /* prevent wrapping */
+  gap: 15px; /* space between buttons */
+  padding: 15px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* Buttons */
+.button-box a {
+  font-family: "Press Start 2P", monospace; /* pixel arcade font */
+  font-size: 14px;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0; /* reset since we’re using gap */
+  color: #fff;
+  background: linear-gradient(
+    to bottom,
+    #00cc66 0%,
+    #009944 100%
+  ); /* green default */
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: inset 0 2px #66ff99, 0 4px #000; /* highlight + drop shadow */
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  image-rendering: pixelated;
+  white-space: nowrap; /* keeps text from breaking into 2 lines */
+}
+
+/* Button 2 - Blue */
+.button-box a:nth-child(2) {
+  background: linear-gradient(to bottom, #ff33ff 0%, #990099 100%); /* purple */
+  box-shadow: inset 0 2px #ff99ff, 0 4px #000;
+}
+
+/* Button 3 - Blue */
+.button-box a:nth-child(3) {
+  background: linear-gradient(to bottom, #3399ff 0%, #0033cc 100%);
+  box-shadow: inset 0 2px #99ccff, 0 4px #000;
+}
+
+/* Button 4 - Red */
+.button-box a:nth-child(4) {
+  background: linear-gradient(to bottom, #ff3333 0%, #990000 100%);
+  box-shadow: inset 0 2px #ff9999, 0 4px #000;
+}
+
+/* Button 5 - Yellow/Gold */
+.button-box a:nth-child(5) {
+  background: linear-gradient(to bottom, #ffcc33 0%, #cc9900 100%);
+  box-shadow: inset 0 2px #ffee99, 0 4px #000;
+}
+
+/* Button 6 - Cyan */
+.button-box a:nth-child(6) {
+  background: linear-gradient(to bottom, #33ffff 0%, #009999 100%);
+  box-shadow: inset 0 2px #99ffff, 0 4px #000;
+}
+
+.button-box a:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 2px #fff, 0 6px #000;
+}
+
+.button-box a:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px #000, 0 2px #000;
+}
+
+.button-box-g a {
+  font-family: "Press Start 2P", monospace; /* pixel arcade font */
+  font-size: 14px;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0; /* reset since we’re using gap */
+  color: #fff;
+  background: linear-gradient(
+    to bottom,
+    #00cc66 0%,
+    #009944 100%
+  ); /* green default */
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: inset 0 2px #66ff99, 0 4px #000; /* highlight + drop shadow */
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  image-rendering: pixelated;
+  white-space: nowrap; /* keeps text from breaking into 2 lines */
+}
+
+.button-box-g a:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 2px #fff, 0 6px #000;
+}
+
+.button-box-g a:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px #000, 0 2px #000;
+}
+
+.button-box-p a {
+  font-family: "Press Start 2P", monospace; /* pixel arcade font */
+  font-size: 14px;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0; /* reset since we’re using gap */
+  color: #fff;
+  background: linear-gradient(
+    to bottom,
+    #ff33ff 0%,
+    #990099 100%
+  ); /* green default */
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: inset 0 2px #ff99ff, 0 4px #000; /* highlight + drop shadow */
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  image-rendering: pixelated;
+  white-space: nowrap; /* keeps text from breaking into 2 lines */
+}
+
+.button-box-p a:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 2px #fff, 0 6px #000;
+}
+
+.button-box-p a:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px #000, 0 2px #000;
+}
+
+.button-box-b a {
+  font-family: "Press Start 2P", monospace; /* pixel arcade font */
+  font-size: 14px;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0; /* reset since we’re using gap */
+  color: #fff;
+  background: linear-gradient(
+    to bottom,
+    #3399ff 0%,
+    #0033cc 100%
+  ); /* green default */
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: inset 0 2px #99ccff, 0 4px #000; /* highlight + drop shadow */
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  image-rendering: pixelated;
+  white-space: nowrap; /* keeps text from breaking into 2 lines */
+}
+
+.button-box-b a:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 2px #fff, 0 6px #000;
+}
+
+.button-box-b a:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px #000, 0 2px #000;
+}
+
+.button-box-r a {
+  font-family: "Press Start 2P", monospace; /* pixel arcade font */
+  font-size: 14px;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0; /* reset since we’re using gap */
+  color: #fff;
+  background: linear-gradient(
+    to bottom,
+    #ff3333 0%,
+    #990000 100%
+  ); /* green default */
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: inset 0 2px #ff9999, 0 4px #000; /* highlight + drop shadow */
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  image-rendering: pixelated;
+  white-space: nowrap; /* keeps text from breaking into 2 lines */
+}
+
+.button-box-r a:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 2px #fff, 0 6px #000;
+}
+
+.button-box-r a:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px #000, 0 2px #000;
+}
+
+.button-box-y a {
+  font-family: "Press Start 2P", monospace; /* pixel arcade font */
+  font-size: 14px;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0; /* reset since we’re using gap */
+  color: #fff;
+  background: linear-gradient(
+    to bottom,
+    #ffcc33 0%,
+    #cc9900 100%
+  ); /* green default */
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: inset 0 2px #ffee99, 0 4px #000; /* highlight + drop shadow */
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  image-rendering: pixelated;
+  white-space: nowrap; /* keeps text from breaking into 2 lines */
+}
+
+.button-box-y a:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 2px #fff, 0 6px #000;
+}
+
+.button-box-y a:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px #000, 0 2px #000;
+}
+
+.button-box-c a {
+  font-family: "Press Start 2P", monospace; /* pixel arcade font */
+  font-size: 14px;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0; /* reset since we’re using gap */
+  color: #fff;
+  background: linear-gradient(
+    to bottom,
+    #33ffff 0%,
+    #009999 100%
+  ); /* green default */
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: inset 0 2px #99ffff, 0 4px #000; /* highlight + drop shadow */
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  image-rendering: pixelated;
+  white-space: nowrap; /* keeps text from breaking into 2 lines */
+}
+
+.button-box-c a:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 2px #fff, 0 6px #000;
+}
+
+.button-box-c a:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px #000, 0 2px #000;
+}
+
+/* Sections */
+section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(20, 20, 20, 0.7);
+  border: 2px solid #00ffcc;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 0 15px #00ffcc;
+}
+
+/* About Section */
+#about {
+  width: 1300px;
+  max-width: 90%;
+  margin: 50px auto; /* center horizontally with space above/below */
+  padding: 20px 30px; /* inner spacing */
+  background: rgba(20, 20, 20, 0.8); /* semi-transparent dark background */
+  border: 3px solid #fff; /* retro white border */
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #333; /* subtle pixel-style shadow */
+  color: #f5f5dc; /* retro beige text */
+  text-align: center;
+  font-family: "Press Start 2P", monospace;
+}
+
+/* Section Heading */
+#about h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7), 4px 4px 0 rgba(0, 0, 0, 0.4);
+  color: #ffd700; /* optional retro gold accent */
+}
+
+/* Section Paragraph */
+#about p {
+  font-family: "Fira Code";
+  text-align: left;
+  font-size: 25px;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* About Section */
+#education {
+  width: 1300px;
+  max-width: 90%;
+  margin: 50px auto; /* center horizontally with space above/below */
+  padding: 20px 30px; /* inner spacing */
+  background: rgba(20, 20, 20, 0.8); /* semi-transparent dark background */
+  border: 3px solid #fff; /* retro white border */
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #333; /* subtle pixel-style shadow */
+  color: #f5f5dc; /* retro beige text */
+  text-align: center;
+  font-family: "Press Start 2P", monospace;
+}
+
+/* Section Heading */
+#education h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7), 4px 4px 0 rgba(0, 0, 0, 0.4);
+  color: #ffd700; /* optional retro gold accent */
+}
+
+#education h3 {
+  text-align: left;
+  font-size: 25px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7), 4px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+#education h4 {
+  font-family: "Fira Code";
+  line-height: 1.1;
+  font-weight: 700;
+  text-align: left;
+  font-size: 25px;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7), 4px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Section Paragraph */
+#education p {
+  font-family: "Fira Code";
+  text-align: left;
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* About Section */
+#skills {
+  width: 1300px;
+  max-width: 90%;
+  margin: 50px auto; /* center horizontally with space above/below */
+  padding: 20px 30px; /* inner spacing */
+  background: rgba(20, 20, 20, 0.8); /* semi-transparent dark background */
+  border: 3px solid #fff; /* retro white border */
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #333; /* subtle pixel-style shadow */
+  color: #f5f5dc; /* retro beige text */
+  text-align: center;
+  font-family: "Press Start 2P", monospace;
+}
+
+/* Section Heading */
+#skills h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7), 4px 4px 0 rgba(0, 0, 0, 0.4);
+  color: #ffd700; /* optional retro gold accent */
+}
+
+#skills h3 {
+  text-align: left;
+  font-size: 20px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7), 4px 4px 0 rgba(0, 0, 0, 0.4);
+  color: #00aeff;
+}
+
+#skills p {
+  font-family: "Fira Code";
+  text-align: left;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.skills-entry{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+}
+
+.skills-entry h3{
+  padding-right: 20px;
+  white-space: nowrap;
+}
+
+#contact {
+  width: 1300px;
+  max-width: 90%;
+  margin: 50px auto; /* center horizontally with space above/below */
+  padding: 20px 30px; /* inner spacing */
+  background: rgba(20, 20, 20, 0.8); /* semi-transparent dark background */
+  border: 3px solid #fff; /* retro white border */
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #333; /* subtle pixel-style shadow */
+  color: #f5f5dc; /* retro beige text */
+  text-align: center;
+  font-family: "Press Start 2P", monospace;
+}
+
+/* Section Heading */
+#contact h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7), 4px 4px 0 rgba(0, 0, 0, 0.4);
+  color: #ffd700; /* optional retro gold accent */
+}
+
+/* Section Paragraph */
+#contact p {
+  font-family: "Fira Code";
+  text-align: left;
+  font-size: 25px;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+#coding {
+  width: 1300px;
+  max-width: 90%;
+  margin: 50px auto; /* center horizontally with space above/below */
+  padding: 20px 30px; /* inner spacing */
+  background: rgba(20, 20, 20, 0.8); /* semi-transparent dark background */
+  border: 3px solid #fff; /* retro white border */
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #333; /* subtle pixel-style shadow */
+  color: #f5f5dc; /* retro beige text */
+  text-align: center;
+  font-family: "Press Start 2P", monospace;
+}
+
+/* Section Heading */
+#coding h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7), 4px 4px 0 rgba(0, 0, 0, 0.4);
+  color: #ffd700; /* optional retro gold accent */
+}
+
+/* Section Paragraph */
+#coding p {
+  font-family: "Fira Code";
+  text-align: left;
+  font-size: 25px;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+#projects {
+  width: 1300px;
+  max-width: 90%;
+  margin: 50px auto; /* center horizontally with space above/below */
+  padding: 20px 30px; /* inner spacing */
+  background: rgba(20, 20, 20, 0.8); /* semi-transparent dark background */
+  border: 3px solid #fff; /* retro white border */
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #333; /* subtle pixel-style shadow */
+  color: #f5f5dc; /* retro beige text */
+  text-align: center;
+  font-family: "Press Start 2P", monospace;
+}
+
+/* Section Heading */
+#projects h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7), 4px 4px 0 rgba(0, 0, 0, 0.4);
+  color: #ffd700; /* optional retro gold accent */
+}
+
+/* Section Paragraph */
+#projects p {
+  font-family: "Fira Code";
+  text-align: left;
+  font-size: 25px;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.profile {
+  display: flex;
+  padding: 10px;
+  gap: 20px; /* space between left and right */
+  width: fit-content;
+}
+
+.profile.reverse {
+  flex-direction: row-reverse;
+}
+
+.project {
+  display: flex;
+  padding: 10px;
+  gap: 20px; /* space between left and right */
+  width: fit-content;
+}
+
+.project.reverse {
+  flex-direction: row-reverse;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* space between logo and button */
+}
+
+.left img {
+  max-width: 200px;
+  border: 10px solid #7b90ee; 
+  box-shadow: 0px 0px 0 10px #fff, 0px 80px 0 10px #fff; /* dark brown outline */
+  border-radius: 8px;
+  /* box-shadow: 4px 4px 0 #3a1f04; */
+}
+
+.left1 img {
+  max-width: 500px;
+  border: 10px solid #7b90ee; 
+  box-shadow: 0px 0px 0 10px #fff, 0px 70px 0 10px #fff; /* dark brown outline */
+  border-radius: 8px;
+  /* box-shadow: 4px 4px 0 #3a1f04; */
+}
+
+.right {
+  width: fit-content;
+  height: fit-content;
+  padding-left: 20px;
+}
+
+.right h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7), 4px 4px 0 rgba(0, 0, 0, 0.4);
+  color: #00aeff; /* optional retro gold accent */
+  text-align: left;
+}
+
+#resume {
+  width: 1300px;
+  max-width: 90%;
+  margin: 50px auto; /* center horizontally with space above/below */
+  padding: 20px 30px; /* inner spacing */
+  background: rgba(20, 20, 20, 0.8); /* semi-transparent dark background */
+  border: 3px solid #fff; /* retro white border */
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #333; /* subtle pixel-style shadow */
+  color: #f5f5dc; /* retro beige text */
+  text-align: center;
+  font-family: "Press Start 2P", monospace;
+}
+
+/* Section Heading */
+#resume h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7), 4px 4px 0 rgba(0, 0, 0, 0.4);
+  color: #ffd700; /* optional retro gold accent */
+}
+
+/* Section Paragraph */
+#resume p {
+  font-family: "Fira Code";
+  text-align: center;
+  font-size: 25px;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+#resume img {
+  max-width: 650px;
+  border: 10px solid #7b90ee; 
+  box-shadow: 0px 0px 0 10px #fff, 0px 70px 0 10px #fff; /* dark brown outline */
+  border-radius: 8px;
+}
+
+
+@media (max-width: 1280px) {
+
+  /* Stack the main video/intro layout */
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Stack project and profile layouts */
+  .profile,
+  .project {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Handle the reversed layouts correctly when stacked */
+  .profile.reverse,
+  .project.reverse {
+    flex-direction: column;
+  }
+
+  /* Center text and remove padding that looks odd on mobile */
+  .right {
+    padding-left: 0;
+    padding-top: 20px;
+  }
+  .right h3, #projects p {
+    text-align: center;
+  }
+  
+  /* Reduce font sizes for better readability on small screens */
+  .intro-box p,
+  #about p,
+  #education h4,
+  #education p,
+  #contact p,
+  #coding p,
+  #projects p,
+  #resume p {
+    font-size: 18px; /* Reduce paragraph font size */
+  }
+
+  #about h2,
+  #education h2,
+  #skills h2,
+  #contact h2,
+  #coding h2,
+  #projects h2,
+  #resume h2 {
+    font-size: 24px; /* Reduce heading font size */
+  }
+
+  #education h3{
+    font-size: 20px;
+  }
+}
