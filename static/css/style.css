@@ -866,8 +866,8 @@ section {
     text-align: center;
     font-size: 16px;
   }
-  .profile-reverse .right,
-.profile .right{
+  .profile-reverse .right p,
+  .profile .right p{
     margin-top: 50px;
   }
 }
@@ -900,7 +900,7 @@ section {
   .button-box a {
     font-size: 10px;
     padding: 8px 12px;
-    max-width: 200px;
+    max-width: 280px;
   }
 
   section,
@@ -923,7 +923,7 @@ section {
   #projects h2,
   #resume h2 {
     font-size: 18px;
-    margin-top: 100px;
+    margin-top: 30px;
   }
 
   #education h3 {
@@ -946,11 +946,11 @@ section {
   #projects p,
   #resume p {
     font-size: 14px;
-    padding-top: 100px;
+    padding-top: 30px;
   }
 
-.profile-reverse .right,
-.profile .right{
+.profile-reverse .right p,
+.profile .right p{
     margin-top: 100px;
   }
 
